@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBANOVA - Smart Urban Mobility</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom styles -->
+    <style>
+        .mycelium-bg {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxsaW5lIHgxPSIwIiB5PSIwIiB4Mj0iMCIgeTI9IjQwIiBzdHJva2U9InJnYmEoMCwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header Section -->
+    <header class="fixed w-full bg-gray-900/80 backdrop-blur-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-cyan-400">URBANOVA</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-cyan-400 transition">Home</a>
+                    <a href="#what-is" class="hover:text-cyan-400 transition">What is Urbanova</a>
+                    <a href="#how-it-works" class="hover:text-cyan-400 transition">How it Works</a>
+                    <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+                </div>
+                <button class="bg-cyan-400 text-gray-900 px-6 py-2 rounded-full hover:bg-cyan-300 transition">
+                    Explore
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen mycelium-bg flex items-center">
+        <div class="container mx-auto px-6 py-20">
+            <div class="max-w-3xl">
+                <h1 class="text-6xl md:text-8xl font-bold mb-6">URBANOVA</h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-4 italic">Where city and intelligence move together</p>
+                <p class="text-2xl md:text-3xl font-bold text-cyan-400 mb-8">Electric, Personalized, Multimodal</p>
+                <button class="bg-cyan-400 text-gray-900 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-300 transition">
+                    UNLOCK
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is URBANOVA Section -->
+    <section id="what-is" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">What is URBANOVA</h2>
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <p class="text-xl text-gray-300">
+                    A decentralized electric charging network inspired by the mycelium: resilient, modular, and adaptive.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">🍄</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Mycelium Inspired</h3>
+                    <p class="text-gray-400">Resilient network structure</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">☀️</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Solar Energy</h3>
+                    <p class="text-gray-400">Sustainable power source</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">🧩</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Modular</h3>
+                    <p class="text-gray-400">Flexible infrastructure</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">E-Mobility</h3>
+                    <p class="text-gray-400">Smart transportation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why it matters Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Why it matters</h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">Current Challenges</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-2">•</span>
+                            Rigid, centralized infrastructure
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-2">•</span>
+                            Limited scalability
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-2">•</span>
+                            High maintenance costs
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-2">•</span>
+                            Environmental impact
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">Our Solution</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-2">•</span>
+                            Organic, modular design
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-2">•</span>
+                            Self-healing infrastructure
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-2">•</span>
+                            Sustainable energy integration
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-2">•</span>
+                            Smart, adaptive network
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works Section -->
+    <section id="how-it-works" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">How it works</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-2xl">🔌</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Smart Nodes</h3>
+                        <p class="text-gray-400">Intelligent charging points</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-2xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Energy Sharing</h3>
+                        <p class="text-gray-400">Distributed power network</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-2xl">🔄</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Self-Repairing</h3>
+                        <p class="text-gray-400">Adaptive maintenance</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-2xl">🌞</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Solar Integration</h3>
+                        <p class="text-gray-400">Renewable energy focus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">Join the urban network of the future</h2>
+            <button class="bg-cyan-400 text-gray-900 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-300 transition">
+                I want to join
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-4">URBANOVA</h3>
+                    <p class="text-gray-400">© 2025 URBANOVA. All rights reserved.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-cyan-400">Home</a></li>
+                        <li><a href="#what-is" class="text-gray-400 hover:text-cyan-400">What is Urbanova</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-cyan-400">How it Works</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-cyan-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-cyan-400">Twitter</a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400">LinkedIn</a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
