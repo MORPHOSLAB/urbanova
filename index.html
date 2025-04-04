@@ -6,26 +6,51 @@
     <title>URBANOVA - Smart Urban Mobility</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom styles -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom styles and animations -->
     <style>
-        .mycelium-bg {
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxsaW5lIHgxPSIwIiB5PSIwIiB4Mj0iMCIgeTI9IjQwIiBzdHJva2U9InJnYmEoMCwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-black text-white">
     <!-- Header Section -->
-    <header class="fixed w-full bg-gray-900/80 backdrop-blur-sm z-50">
-        <nav class="container mx-auto px-6 py-4">
+    <header class="fixed w-full bg-black/80 backdrop-blur-sm z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-6">
             <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold text-cyan-400">URBANOVA</div>
+                <div class="text-2xl font-bold tracking-wider text-cyan-400">URBANOVA</div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-cyan-400 transition">Home</a>
-                    <a href="#what-is" class="hover:text-cyan-400 transition">What is Urbanova</a>
-                    <a href="#how-it-works" class="hover:text-cyan-400 transition">How it Works</a>
-                    <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+                    <a href="#home" class="text-gray-300 hover:text-cyan-400 transition duration-300">Home</a>
+                    <a href="#what-is" class="text-gray-300 hover:text-cyan-400 transition duration-300">What is Urbanova</a>
+                    <a href="#how-it-works" class="text-gray-300 hover:text-cyan-400 transition duration-300">How it Works</a>
+                    <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition duration-300">Contact</a>
                 </div>
-                <button class="bg-cyan-400 text-gray-900 px-6 py-2 rounded-full hover:bg-cyan-300 transition">
+                <button class="bg-cyan-400 text-black px-6 py-2 rounded-full hover:opacity-90 transition duration-300">
                     Explore
                 </button>
             </div>
@@ -33,13 +58,18 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen mycelium-bg flex items-center">
+    <section id="home" class="min-h-screen flex items-center pt-20">
         <div class="container mx-auto px-6 py-20">
-            <div class="max-w-3xl">
-                <h1 class="text-6xl md:text-8xl font-bold mb-6">URBANOVA</h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-4 italic">Where city and intelligence move together</p>
-                <p class="text-2xl md:text-3xl font-bold text-cyan-400 mb-8">Electric, Personalized, Multimodal</p>
-                <button class="bg-cyan-400 text-gray-900 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-300 transition">
+            <div class="max-w-4xl mx-auto text-center animate-fade-in">
+                <h1 class="text-7xl md:text-8xl font-bold mb-8 tracking-tight">URBANOVA</h1>
+                <p class="text-2xl md:text-3xl text-gray-300 mb-6 italic tracking-wide">Where city and intelligence move together</p>
+                <p class="text-3xl md:text-4xl font-bold text-cyan-400 mb-12 tracking-wider">Electric, Personalized, Multimodal</p>
+                
+                <img src="images/futuristic-urbanova-scooter.jpg" 
+                     alt="Futuristic Urbanova Scooter" 
+                     class="mx-auto my-12 w-2/3 md:w-1/2 rounded-xl shadow-2xl animate-slide-up">
+                
+                <button class="bg-cyan-400 text-black px-12 py-4 rounded-full text-xl font-bold tracking-wider hover:opacity-90 transition duration-300">
                     UNLOCK
                 </button>
             </div>
@@ -47,41 +77,45 @@
     </section>
 
     <!-- What is URBANOVA Section -->
-    <section id="what-is" class="py-20">
+    <section id="what-is" class="py-32 section">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center">What is URBANOVA</h2>
-            <div class="max-w-3xl mx-auto text-center mb-12">
-                <p class="text-xl text-gray-300">
+            <h2 class="text-5xl font-bold mb-16 text-center tracking-tight">What is URBANOVA</h2>
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <p class="text-xl text-gray-300 leading-relaxed">
                     A decentralized electric charging network inspired by the mycelium: resilient, modular, and adaptive.
                 </p>
+                
+                <img src="images/display.jpg" 
+                     alt="Urbanova App Display on Phone" 
+                     class="mx-auto my-16 max-w-md rounded-xl shadow-xl">
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-2xl">🍄</span>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-6xl mx-auto">
+                <div class="text-center p-6 rounded-xl bg-gray-900/50 hover:bg-gray-900/80 transition duration-300">
+                    <div class="w-20 h-20 bg-cyan-400/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-3xl">🍄</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Mycelium Inspired</h3>
+                    <h3 class="text-xl font-bold mb-3">Mycelium Inspired</h3>
                     <p class="text-gray-400">Resilient network structure</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-2xl">☀️</span>
+                <div class="text-center p-6 rounded-xl bg-gray-900/50 hover:bg-gray-900/80 transition duration-300">
+                    <div class="w-20 h-20 bg-cyan-400/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-3xl">☀️</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Solar Energy</h3>
+                    <h3 class="text-xl font-bold mb-3">Solar Energy</h3>
                     <p class="text-gray-400">Sustainable power source</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-2xl">🧩</span>
+                <div class="text-center p-6 rounded-xl bg-gray-900/50 hover:bg-gray-900/80 transition duration-300">
+                    <div class="w-20 h-20 bg-cyan-400/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-3xl">🧩</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Modular</h3>
+                    <h3 class="text-xl font-bold mb-3">Modular</h3>
                     <p class="text-gray-400">Flexible infrastructure</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-2xl">⚡</span>
+                <div class="text-center p-6 rounded-xl bg-gray-900/50 hover:bg-gray-900/80 transition duration-300">
+                    <div class="w-20 h-20 bg-cyan-400/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-3xl">⚡</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">E-Mobility</h3>
+                    <h3 class="text-xl font-bold mb-3">E-Mobility</h3>
                     <p class="text-gray-400">Smart transportation</p>
                 </div>
             </div>
@@ -89,49 +123,54 @@
     </section>
 
     <!-- Why it matters Section -->
-    <section class="py-20 bg-gray-800">
+    <section class="py-32 bg-gray-900/50 section">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center">Why it matters</h2>
-            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">Current Challenges</h3>
-                    <ul class="space-y-4 text-gray-300">
+            <h2 class="text-5xl font-bold mb-16 text-center tracking-tight">Why it matters</h2>
+            
+            <img src="images/oportunidad.jpg" 
+                 alt="Urban Opportunity Visual" 
+                 class="mx-auto my-16 max-w-4xl rounded-xl shadow-xl">
+            
+            <div class="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                <div class="p-8 rounded-xl bg-gray-900/50">
+                    <h3 class="text-2xl font-bold mb-8 text-cyan-400">Current Challenges</h3>
+                    <ul class="space-y-6 text-gray-300">
                         <li class="flex items-start">
-                            <span class="text-cyan-400 mr-2">•</span>
-                            Rigid, centralized infrastructure
+                            <span class="text-cyan-400 mr-3 text-xl">•</span>
+                            <span>Rigid, centralized infrastructure</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-cyan-400 mr-2">•</span>
-                            Limited scalability
+                            <span class="text-cyan-400 mr-3 text-xl">•</span>
+                            <span>Limited scalability</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-cyan-400 mr-2">•</span>
-                            High maintenance costs
+                            <span class="text-cyan-400 mr-3 text-xl">•</span>
+                            <span>High maintenance costs</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-cyan-400 mr-2">•</span>
-                            Environmental impact
+                            <span class="text-cyan-400 mr-3 text-xl">•</span>
+                            <span>Environmental impact</span>
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">Our Solution</h3>
-                    <ul class="space-y-4 text-gray-300">
+                <div class="p-8 rounded-xl bg-gray-900/50">
+                    <h3 class="text-2xl font-bold mb-8 text-cyan-400">Our Solution</h3>
+                    <ul class="space-y-6 text-gray-300">
                         <li class="flex items-start">
-                            <span class="text-cyan-400 mr-2">•</span>
-                            Organic, modular design
+                            <span class="text-cyan-400 mr-3 text-xl">•</span>
+                            <span>Organic, modular design</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-cyan-400 mr-2">•</span>
-                            Self-healing infrastructure
+                            <span class="text-cyan-400 mr-3 text-xl">•</span>
+                            <span>Self-healing infrastructure</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-cyan-400 mr-2">•</span>
-                            Sustainable energy integration
+                            <span class="text-cyan-400 mr-3 text-xl">•</span>
+                            <span>Sustainable energy integration</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-cyan-400 mr-2">•</span>
-                            Smart, adaptive network
+                            <span class="text-cyan-400 mr-3 text-xl">•</span>
+                            <span>Smart, adaptive network</span>
                         </li>
                     </ul>
                 </div>
@@ -140,81 +179,108 @@
     </section>
 
     <!-- How it works Section -->
-    <section id="how-it-works" class="py-20">
+    <section id="how-it-works" class="py-32 section">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center">How it works</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🔌</span>
+            <h2 class="text-5xl font-bold mb-16 text-center tracking-tight">How it works</h2>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-16">
+                    <div class="text-center p-8 rounded-xl bg-gray-900/50 hover:bg-gray-900/80 transition duration-300">
+                        <div class="w-20 h-20 bg-cyan-400/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <span class="text-3xl">🔌</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Smart Nodes</h3>
+                        <h3 class="text-xl font-bold mb-3">Smart Nodes</h3>
                         <p class="text-gray-400">Intelligent charging points</p>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">⚡</span>
+                    <div class="text-center p-8 rounded-xl bg-gray-900/50 hover:bg-gray-900/80 transition duration-300">
+                        <div class="w-20 h-20 bg-cyan-400/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <span class="text-3xl">⚡</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Energy Sharing</h3>
+                        <h3 class="text-xl font-bold mb-3">Energy Sharing</h3>
                         <p class="text-gray-400">Distributed power network</p>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🔄</span>
+                    <div class="text-center p-8 rounded-xl bg-gray-900/50 hover:bg-gray-900/80 transition duration-300">
+                        <div class="w-20 h-20 bg-cyan-400/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <span class="text-3xl">🔄</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Self-Repairing</h3>
+                        <h3 class="text-xl font-bold mb-3">Self-Repairing</h3>
                         <p class="text-gray-400">Adaptive maintenance</p>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-cyan-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🌞</span>
+                    <div class="text-center p-8 rounded-xl bg-gray-900/50 hover:bg-gray-900/80 transition duration-300">
+                        <div class="w-20 h-20 bg-cyan-400/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <span class="text-3xl">🌞</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Solar Integration</h3>
+                        <h3 class="text-xl font-bold mb-3">Solar Integration</h3>
                         <p class="text-gray-400">Renewable energy focus</p>
                     </div>
                 </div>
+                
+                <img src="images/friendly-token.jpg" 
+                     alt="Friendly Digital Token Diagram" 
+                     class="mx-auto max-w-3xl rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Final CTA Section -->
-    <section class="py-20 bg-gray-800">
+    <section class="py-32 bg-gray-900/50 section">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-8">Join the urban network of the future</h2>
-            <button class="bg-cyan-400 text-gray-900 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-300 transition">
+            <h2 class="text-5xl font-bold mb-12 tracking-tight">Join the urban network of the future</h2>
+            <button class="bg-cyan-400 text-black px-12 py-4 rounded-full text-xl font-bold tracking-wider hover:opacity-90 transition duration-300">
                 I want to join
             </button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-gray-900">
+    <footer class="py-16 bg-black border-t border-gray-800">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
                 <div>
-                    <h3 class="text-2xl font-bold text-cyan-400 mb-4">URBANOVA</h3>
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-4 tracking-wider">URBANOVA</h3>
                     <p class="text-gray-400">© 2025 URBANOVA. All rights reserved.</p>
                 </div>
                 <div>
                     <h4 class="text-lg font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-cyan-400">Home</a></li>
-                        <li><a href="#what-is" class="text-gray-400 hover:text-cyan-400">What is Urbanova</a></li>
-                        <li><a href="#how-it-works" class="text-gray-400 hover:text-cyan-400">How it Works</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-cyan-400">Contact</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-cyan-400 transition duration-300">Home</a></li>
+                        <li><a href="#what-is" class="text-gray-400 hover:text-cyan-400 transition duration-300">What is Urbanova</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-cyan-400 transition duration-300">How it Works</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-cyan-400 transition duration-300">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-bold mb-4">Connect</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-cyan-400">Twitter</a>
-                        <a href="#" class="text-gray-400 hover:text-cyan-400">LinkedIn</a>
-                        <a href="#" class="text-gray-400 hover:text-cyan-400">Instagram</a>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 transition duration-300">Twitter</a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 transition duration-300">LinkedIn</a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 transition duration-300">Instagram</a>
                     </div>
                 </div>
             </div>
+            
+            <img src="images/retro-car-token.jpg" 
+                 alt="Retro Car and Digital Token" 
+                 class="mx-auto mt-16 max-w-2xl rounded-xl opacity-75">
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html> 
